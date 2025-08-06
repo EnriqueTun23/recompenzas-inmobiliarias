@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { LoginScreen } from './components/LoginScreen';
+import { Layout } from './components/Layout';
+import { Dashboard } from './components/Dashboard';
+import { AsesoresModule } from './components/AsesoresModule';
+import { ProductsModule } from './components/ProductsModule';
+import { PointRulesModule } from './components/PointRulesModule';
+import { SalesModule } from './components/SalesModule';
+import { ReportsModule } from './components/ReportsModule';
 
-function App() {
-  const [count, setCount] = useState(0)
+const AppContent: React.FC = () => {
+  const { admin, isLoading } = useAuth();
+  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [selectedAsesor, setSelectedAsesor] = useState<string | null>(null);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p>Cargando...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!admin) {
+    return <LoginScreen />;
+  }
+
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+      case 'dashboard':
+        return <Dashboard />;
+      case 'asesores':
+        return (
+          <AsesoresModule 
+            selectedAsesor={selectedAsesor}
+            onSelectAsesor={setSelectedAsesor}
+          />
+        );
+      case 'productos':
+        return <ProductsModule />;
+      case 'reglas':
+        return <PointRulesModule />;
+      case 'ventas':
+        return <SalesModule />;
+      case 'reportes':
+        return <ReportsModule />;
+      default:
+        return <Dashboard />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Layout 
+      currentPage={currentPage} 
+      onPageChange={(page) => {
+        setCurrentPage(page);
+        if (page !== 'asesores') {
+          setSelectedAsesor(null);
+        }
+      }}
+    >
+      {renderCurrentPage()}
+    </Layout>
+  );
+};
 
-export default App
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}
