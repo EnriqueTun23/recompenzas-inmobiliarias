@@ -10,9 +10,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Badge } from './ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Alert, AlertDescription } from './ui/alert';
-import { Plus, Award, ShoppingCart, CheckCircle, AlertCircle } from 'lucide-react@0.487.0';
+import { Award, ShoppingCart, CheckCircle, AlertCircle } from 'lucide-react';
 import { asesores, products, pointRules, pointTransactions, redemptionTransactions } from '../data/mockData';
-import { PointTransaction, RedemptionTransaction } from '../types';
+import type { PointTransaction, RedemptionTransaction } from '../types';
+
 
 export const SalesModule: React.FC = () => {
   const [transactions, setTransactions] = useState<PointTransaction[]>(pointTransactions);

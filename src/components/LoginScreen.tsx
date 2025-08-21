@@ -25,6 +25,7 @@ export const LoginScreen: React.FC = () => {
       }
     } catch (err) {
       setError('Error al iniciar sesión. Intenta de nuevo.');
+      console.error(err)
     } finally {
       setIsLoading(false);
     }

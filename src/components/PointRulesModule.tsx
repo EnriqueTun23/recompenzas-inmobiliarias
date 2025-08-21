@@ -8,9 +8,9 @@ import { Switch } from './ui/switch';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { Badge } from './ui/badge';
-import { Plus, Edit, Trash2 } from 'lucide-react@0.487.0';
+import { Plus, Edit, Trash2 } from 'lucide-react';
 import { pointRules } from '../data/mockData';
-import { PointRule } from '../types';
+import type { PointRule } from '../types';
 
 export const PointRulesModule: React.FC = () => {
   const [rulesList, setRulesList] = useState<PointRule[]>(pointRules);

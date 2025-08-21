@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { Badge } from './ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Download, FileText, Filter } from 'lucide-react@0.487.0';
+import { Download, Filter } from 'lucide-react';
 import { asesores, products, pointTransactions, redemptionTransactions, pointRules } from '../data/mockData';
 
 export const ReportsModule: React.FC = () => {

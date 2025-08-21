@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts@2.15.2';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from './ui/chart';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { Search, ArrowLeft, TrendingUp } from 'lucide-react@0.487.0';
+import { Search, ArrowLeft, TrendingUp } from 'lucide-react';
 import { asesores, pointTransactions, redemptionTransactions, propertySales } from '../data/mockData';
-import { Asesor } from '../types';
 
 interface AsesoresModuleProps {
   selectedAsesor: string | null;

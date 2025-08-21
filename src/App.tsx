@@ -8,6 +8,7 @@ import { ProductsModule } from './components/ProductsModule';
 import { PointRulesModule } from './components/PointRulesModule';
 import { SalesModule } from './components/SalesModule';
 import { ReportsModule } from './components/ReportsModule';
+import './styles/globals.css'
 
 const AppContent: React.FC = () => {
   const { admin, isLoading } = useAuth();

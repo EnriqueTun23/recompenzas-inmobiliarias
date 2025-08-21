@@ -1,8 +1,8 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell } from 'recharts@2.15.2';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from './ui/chart';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { TrendingUp, Users, Package, Award, Download, Coins, Gift, Wallet } from 'lucide-react@0.487.0';
+import { TrendingUp, Users, Package, Award, Download, Gift, Wallet } from 'lucide-react';
 import { Button } from './ui/button';
 import { asesores, products, pointTransactions, redemptionTransactions } from '../data/mockData';
 

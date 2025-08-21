@@ -1,4 +1,5 @@
-import { Asesor, Product, PointRule, PointTransaction, RedemptionTransaction, PropertySale } from '../types';
+import type { Asesor, PointRule, PointTransaction, Product, PropertySale, RedemptionTransaction } from "../types";
+
 
 export const asesores: Asesor[] = [
   {

@@ -9,7 +9,7 @@ import {
   LogOut,
   Menu,
   Home
-} from 'lucide-react@0.487.0';
+} from 'lucide-react';
 import { Button } from './ui/button';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -25,7 +25,6 @@ const menuItems = [
   { id: 'productos', label: 'Productos', icon: Package },
   { id: 'reglas', label: 'Reglas de Puntos', icon: Settings },
   { id: 'ventas', label: 'Ventas y Puntos', icon: TrendingUp },
-  { id: 'reportes', label: 'Reportes', icon: FileText }
 ];
 
 export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onPageChange }) => {

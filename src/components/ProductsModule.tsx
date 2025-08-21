@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -8,10 +8,10 @@ import { Badge } from './ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Switch } from './ui/switch';
-import { Plus, Edit, Trash2, Copy } from 'lucide-react@0.487.0';
+import { Plus, Edit, Trash2, Copy } from 'lucide-react';
 import { products } from '../data/mockData';
-import { Product } from '../types';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import type { Product } from '../types';
 
 export const ProductsModule: React.FC = () => {
   const [productList, setProductList] = useState<Product[]>(products);
